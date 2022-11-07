@@ -1,0 +1,27 @@
+uuid: c7a08616-9473-492c-90f4-533762739a81
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.character
+  module:
+    - media
+    - node
+    - system
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'create character content'
+  - 'delete any character content'
+  - 'delete character revisions'
+  - 'delete own character content'
+  - 'edit any character content'
+  - 'edit own character content'
+  - 'revert character revisions'
+  - 'view character revisions'
+  - 'view media'

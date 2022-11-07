@@ -1,0 +1,20 @@
+uuid: 63481c25-6d83-4174-b87f-061aef2fe26f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - crowdgator
+_core:
+  default_config_hash: Oh72CHUkp6cj6dbrXMK2hzCsM05w9cHVoD22rMLQUfk
+id: crowdgator_page_title
+theme: crowdgator
+region: content
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: 546d3e2a-ab41-4dc7-aa89-e002c7f7846e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_url
+    - node.type.character
+id: node.character.field_url
+field_name: field_url
+entity_type: node
+bundle: character
+label: Url
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

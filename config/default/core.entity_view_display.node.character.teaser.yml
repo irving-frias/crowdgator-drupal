@@ -1,0 +1,37 @@
+uuid: 78422e33-e21a-4b0b-b76c-3a1f9c3b3bab
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.character.field_created
+    - field.field.node.character.field_gender
+    - field.field.node.character.field_id
+    - field.field.node.character.field_image
+    - field.field.node.character.field_name
+    - field.field.node.character.field_status
+    - field.field.node.character.field_type
+    - field.field.node.character.field_url
+    - node.type.character
+  module:
+    - user
+id: node.character.teaser
+targetEntityType: node
+bundle: character
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_created: true
+  field_gender: true
+  field_id: true
+  field_image: true
+  field_name: true
+  field_status: true
+  field_type: true
+  field_url: true
+  search_api_excerpt: true

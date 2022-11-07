@@ -1,0 +1,11 @@
+uuid: 0cd65f90-b1ed-4722-ad7c-39049813e961
+langcode: en
+status: true
+dependencies: {  }
+name: Character
+type: character
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
