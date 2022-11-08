@@ -20,13 +20,6 @@ drush:
     ci: self
   default_alias: '${drush.aliases.local}'
   sanitize: false
-command-hooks:
-  frontend-reqs:
-    dir: ${docroot}/themes/custom/crowdgator
-    command: 'npm ci'
-  frontend-assets:
-    dir: ${docroot}/themes/custom/crowdgator
-    command: 'gulp build-prod'
 modules:
   local:
     enable: [dblog, devel, seckit, views_ui]
