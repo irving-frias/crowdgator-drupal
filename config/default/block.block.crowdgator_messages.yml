@@ -1,6 +1,6 @@
 uuid: bf835fbb-6336-4505-97e0-40c8b702669d
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,7 +10,7 @@ _core:
   default_config_hash: aeqlWs7HwctZeZC7ADcbxfqehJzBRfZKmuZz3DsH3_4
 id: crowdgator_messages
 theme: crowdgator
-region: highlighted
+region: alerts
 weight: 0
 provider: null
 plugin: system_messages_block

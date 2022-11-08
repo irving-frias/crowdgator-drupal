@@ -3,6 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_gender
+    - field.storage.node.field_status
+    - field.storage.node.field_type
     - search_api.server.solr
   module:
     - search_api_solr
@@ -64,6 +67,30 @@ field_settings:
     configuration:
       type: union
       fields: {  }
+  field_gender:
+    label: Gender
+    datasource_id: 'entity:node'
+    property_path: field_gender
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_gender
+  field_status:
+    label: Status
+    datasource_id: 'entity:node'
+    property_path: field_status
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_status
+  field_type:
+    label: Type
+    datasource_id: 'entity:node'
+    property_path: field_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_type
   rendered_item:
     label: 'Rendered HTML output'
     property_path: rendered_item

@@ -1,0 +1,25 @@
+<div id="search-bar" class="bg-primary">
+  <div class="container-fluid limiter">
+    <div class="inner-wrapper">
+      <div id="nav-icon">
+        {% if nav_icon_svg %}
+          <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home" class="nav-logo d-block">
+            {{ nav_icon_svg|raw }}
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="main-search">
+        <div id="main-nav-area" class="collapse">
+          {{ page.nav_main }}
+          {{ page.nav_additional }}
+        </div>
+
+        {% include '@crowdgator/layout/inc/search-form.html.twig' %}
+        <button id="menu-opener" class="btn-reset d-xl-none" type="button" name="button" data-bs-toggle="collapse" data-bs-target="#main-nav-area" aria-expanded="false" aria-controls="main-nav-area">
+          {% trans %}Open Menu{% endtrans %}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

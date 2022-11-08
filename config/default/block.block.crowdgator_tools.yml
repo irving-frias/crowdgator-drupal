@@ -1,6 +1,6 @@
 uuid: 4f2e37b4-8498-4769-bac8-0299e94c8674
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.tools
@@ -12,7 +12,7 @@ _core:
   default_config_hash: UL5ZZvI0Lnp3fmVmhIDxvNI9RlMD0sfBIOi9ozr-k5o
 id: crowdgator_tools
 theme: crowdgator
-region: sidebar_first
+region: alerts
 weight: 0
 provider: null
 plugin: 'system_menu_block:tools'

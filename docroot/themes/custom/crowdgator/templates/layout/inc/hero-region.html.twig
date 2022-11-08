@@ -1,0 +1,28 @@
+{% if hero %}
+  <div class="hero-region">
+    {% if hero_length > 1 %}
+      <div id="hero-slider" class="hero-info-slider-block carousel slide" data-bs-ride="carousel" data-bs-interval="0">
+        <div class="carousel-control-prev-wrapper">
+          <button class="carousel-control-prev" type="button" data-bs-target="#hero-slider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+        </div>
+
+        <div class="carousel-inner">
+          {{ hero }}
+        </div>
+
+        <div class="carousel-control-next-wrapper">
+          <button class="carousel-control-next" type="button" data-bs-target="#hero-slider" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+    {% else %}
+      {{ hero }}
+    {% endif %}
+  </div>
+{% endif %}

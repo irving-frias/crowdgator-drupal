@@ -1,0 +1,29 @@
+uuid: 095ac13a-6390-4807-b167-d24c73247f61
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.gender
+  module:
+    - facets
+    - system
+  theme:
+    - crowdgator
+id: gender
+theme: crowdgator
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:gender'
+settings:
+  id: 'facet_block:gender'
+  label: Gender
+  label_display: '0'
+  provider: facets
+  context_mapping: {  }
+  block_id: gender
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /rick-morty-characters

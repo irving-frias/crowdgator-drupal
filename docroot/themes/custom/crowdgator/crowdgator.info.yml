@@ -10,28 +10,24 @@ libraries:
   - crowdgator/global-styling
 
 regions:
-  top_header: 'Top header'
-  top_header_form: 'Top header form'
+  alerts: 'Alerts'
+  utility_bar: 'Utility Bar'
   header: Header
-  header_form: 'Header form'
-  primary_menu: 'Primary menu'
-  secondary_menu: 'Secondary menu'
-  page_top: 'Page top'
-  page_bottom: 'Page bottom'
-  highlighted: Highlighted
-  featured_top: 'Featured top'
-  breadcrumb: Breadcrumb
-  content: Content
-  sidebar_first: 'Sidebar first'
-  sidebar_second: 'Sidebar second'
-  featured_bottom_first: 'Featured bottom first'
-  featured_bottom_second: 'Featured bottom second'
-  featured_bottom_third: 'Featured bottom third'
-  footer_first: 'Footer first'
-  footer_second: 'Footer second'
-  footer_third: 'Footer third'
-  footer_fourth: 'Footer fourth'
-  footer_fifth: 'Footer fifth'
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  search_form: 'Search Form'
+  hero: 'Hero'
+  primary_tabs: 'Primary Tabs'
+  breadcrumb: Breadcrumbs
+  exposed_forms: 'Exposed Forms'
+  search_main_content: 'Search Main Content'
+  facets: Facets
+  facets_bottom: 'Facets Bottom'
+  content: 'Main content'
+  footer_top: 'Footer Top'
+  footer: Footer
+  footer_bottom: 'Footer Bottom'
 
 # Information added by Drupal.org packaging script on 2022-08-17
 version: '1.0'

@@ -1,0 +1,28 @@
+{% if page.footer_top %}
+<div class="mt-auto footer-top">
+  <div class="container-fluid global limiter">
+    {{ page.footer_top }}
+  </div>
+
+  <button id="footer-sticky-opener" aria-label="Opener"></button>
+</div>
+{% endif %}
+
+{% if page.footer %}
+<footer class="{{ footer_classes }} active">
+  {% if page.footer %}
+  <div class="footer text-white">
+    <div class="container-fluid global limiter">
+      {{ page.footer }}
+    </div>
+  </div>
+  {% endif %}
+  {% if page.footer_bottom %}
+  <div class="footer-bottom text-white">
+    <div class="container-fluid global limiter">
+      {{ page.footer_bottom }}
+    </div>
+  </div>
+  {% endif %}
+</footer>
+{% endif %}

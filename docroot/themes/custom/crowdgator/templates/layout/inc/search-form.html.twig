@@ -1,0 +1,9 @@
+<div id="search-wrapper" class="dropdown">
+  <button id="search-opener" class="btn-reset dropdown-toggle" type="button" data-bs-toggle="dropdown">
+    {% trans %}Open Search{% endtrans %}
+  </button>
+
+  <div class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="search-opener">
+    {{ page.search_form }}
+  </div>
+</div>

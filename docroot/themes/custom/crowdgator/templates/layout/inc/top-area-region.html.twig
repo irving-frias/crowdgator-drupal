@@ -1,0 +1,16 @@
+<div class="top-area">
+  <header>
+    {{ page.header }}
+
+    {% if page.nav_branding or page.nav_main or page.nav_additional %}
+    <nav class="{{ nav_classes }} d-flex flex-column">
+      <div class="top-header w-100">
+        <div class="container-fluid limiter d-flex">
+          {{ page.nav_branding }}
+        </div>
+      </div>
+    </nav>
+    {% endif %}
+
+  </header>
+</div>

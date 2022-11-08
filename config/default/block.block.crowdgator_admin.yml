@@ -1,6 +1,6 @@
 uuid: a5bac047-977f-495f-a701-1d5bd1994c0f
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.admin
@@ -12,7 +12,7 @@ _core:
   default_config_hash: 5MfnyzXbzrDa_OJuFfZfpiBYkMiuRp4mk4GM7HYc8eM
 id: crowdgator_admin
 theme: crowdgator
-region: sidebar_first
+region: alerts
 weight: 1
 provider: null
 plugin: 'system_menu_block:admin'
