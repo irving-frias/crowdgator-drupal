@@ -34,3 +34,9 @@ deployment_identifier
 
 # Ignore .env files as they are personal
 /.env
+
+vendor/composer/autoload_classmap.php
+vendor/composer/autoload_psr4.php
+vendor/composer/autoload_static.php
+vendor/composer/installed.json
+vendor/composer/installed.php
