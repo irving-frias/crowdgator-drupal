@@ -76,7 +76,7 @@ class RickAndMortyCommands extends DrushCommands {
             ->condition('name', $value['name'], 'IN')
             ->execute();
 
-            if ($mid == NULL) {
+            if (empty($mid)) {
               $image_data = file_get_contents($value['image']);
               $file_repository = \Drupal::service('file.repository');
               $processed_name = strtolower(str_replace(' ', '-', $value['name']));
@@ -102,7 +102,7 @@ class RickAndMortyCommands extends DrushCommands {
               'field_id' => $value["id"],
               'title' => $value["name"],
               'field_status' => [['target_id' => $this->GetStatusTaxonomy($value["status"])]],
-              'field_image' => $mid,
+              'field_image' => $image_media,
             ]);
 
             $node->save();
