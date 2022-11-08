@@ -32,4 +32,5 @@ hidden:
   field_status: true
   field_type: true
   field_url: true
+  langcode: true
   search_api_excerpt: true
