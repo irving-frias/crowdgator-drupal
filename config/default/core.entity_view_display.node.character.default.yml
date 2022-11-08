@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.character.field_gender
     - field.field.node.character.field_id
     - field.field.node.character.field_image
-    - field.field.node.character.field_name
     - field.field.node.character.field_status
     - field.field.node.character.field_type
     - field.field.node.character.field_url
@@ -53,14 +52,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 106
-    region: content
-  field_name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 102
     region: content
   field_status:
     type: entity_reference_label

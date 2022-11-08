@@ -1,2 +1,72 @@
 project:
   machine_name: crowdgator
+  prefix: CG
+  human_name: 'Crowdgator'
+  profile:
+    name: minimal
+  local:
+    protocol: http
+    hostname: '${env.VIRTUAL_HOST}'
+git:
+  default_branch: master
+  remotes:
+    cloud: 'git@github.com:irving-frias/crowdgator-drupal.git'
+deploy:
+  tag_source: true
+drush:
+  aliases:
+    local: self
+    remote: ${project.machine_name}.test
+    ci: self
+  default_alias: '${drush.aliases.local}'
+  sanitize: false
+command-hooks:
+  frontend-reqs:
+    dir: ${docroot}/themes/custom/crowdgator
+    command: 'npm ci'
+  frontend-assets:
+    dir: ${docroot}/themes/custom/crowdgator
+    command: 'gulp build-prod'
+modules:
+  local:
+    enable: [dblog, devel, seckit, views_ui]
+    uninstall: [shield]
+  ci:
+    enable: {}
+    uninstall: [shield, devel, seckit, field_ui, views_ui]
+  dev:
+    enable: [shield, devel, field_ui, views_ui]
+    uninstall: [seckit]
+  test:
+    enable: [shield]
+    uninstall: [devel, seckit, field_ui, views_ui]
+  prod:
+    enable: {}
+    uninstall: [shield, devel, seckit, field_ui, views_ui]
+validate:
+  twig:
+    functions:
+      - pattern
+      - drupal_entity
+      - drupal_field
+      - drupal_view
+      - drupal_block
+      - drupal_region
+      - drupal_menu
+      - drupal_form
+      - drupal_image
+      - drupal_token
+      - drupal_title
+      - drupal_url
+      - drupal_link
+      - drupal_messages
+      - drupal_breadcrumb
+    filters:
+      - field_value
+      - field_raw
+      - image_style
+      - field_target_entity
+    function:
+      - drupal_config
+      - drupal_view
+      - drupal_entity

@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.character.field_gender
     - field.field.node.character.field_id
     - field.field.node.character.field_image
-    - field.field.node.character.field_name
     - field.field.node.character.field_status
     - field.field.node.character.field_type
     - field.field.node.character.field_url
@@ -56,14 +55,6 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
-  field_name:
-    type: string_textfield
-    weight: 122
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_status:
     type: entity_reference_autocomplete

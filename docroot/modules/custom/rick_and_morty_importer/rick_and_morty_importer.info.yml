@@ -1,0 +1,5 @@
+name: Rick And Morty Importer
+type: module
+description: Imports data from api to content type character.
+package: Custom
+core_version_requirement: ^9 || ^10
