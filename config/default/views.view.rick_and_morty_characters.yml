@@ -78,10 +78,26 @@ display:
           multi_type: separator
           multi_separator: ', '
       pager:
-        type: none
+        type: full
         options:
           offset: 0
-          items_per_page: null
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -114,11 +130,60 @@ display:
             field_identifier: ''
           exposed: false
       arguments: {  }
-      filters: {  }
+      filters:
+        label:
+          id: label
+          table: search_api_index_content
+          field: label
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_text
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: label_op
+            label: Label
+            description: ''
+            use_operator: false
+            operator: label_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: label
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: 'Search by name'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: default
       row:
         type: search_api
+        options:
+          view_modes:
+            'entity:node':
+              character: teaser
       query:
         type: search_api_query
         options:
@@ -135,6 +200,8 @@ display:
       max-age: -1
       contexts:
         - 'languages:language_interface'
+        - url
+        - url.query_args
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.content'
@@ -150,6 +217,7 @@ display:
       max-age: -1
       contexts:
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
       tags:
