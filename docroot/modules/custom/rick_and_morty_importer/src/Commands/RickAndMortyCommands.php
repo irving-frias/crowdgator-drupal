@@ -94,6 +94,10 @@ class RickAndMortyCommands extends DrushCommands {
 
               $image_media->save();
               dump("New Media image: " . $processed_name . ".jpeg");
+            } else {
+              foreach ($mid as $mid_key => $mid_value) {
+                $image_media = Media::load($mid_key);
+              }
             }
 
           if (empty($nid)) {
@@ -103,6 +107,8 @@ class RickAndMortyCommands extends DrushCommands {
               'title' => $value["name"],
               'field_status' => [['target_id' => $this->GetStatusTaxonomy($value["status"])]],
               'field_image' => $image_media,
+              'field_gender' => [['target_id' => $this->GetGenderTaxonomy($value["gender"])]],
+              'field_created' => $value["created"],
             ]);
 
             $node->save();
@@ -111,7 +117,20 @@ class RickAndMortyCommands extends DrushCommands {
             ]);
             \Drupal::messenger()->addMessage($message);
           } else {
+            foreach ($nid as $nid_index => $nid_value) {
+              $modify_node = Node::Load($nid_value);
+              $modify_node->field_id = $value["id"];
+              $modify_node->field_image = $image_media;
+              $modify_node->field_status = [['target_id' => $this->GetStatusTaxonomy($value["status"])]];
+              $modify_node->field_gender = [['target_id' => $this->GetGenderTaxonomy($value["gender"])]];
+              $modify_node->field_created = $value["created"];
 
+              $modify_node->save();
+              $message = t('Updated Node @id.', [
+                '@id' => $modify_node->id(),
+              ]);
+              \Drupal::messenger()->addMessage($message);
+            }
           }
         }
       }
@@ -121,17 +140,46 @@ class RickAndMortyCommands extends DrushCommands {
   }
 
   public function GetStatusTaxonomy($str) {
+    $termId = \Drupal::entityQuery("taxonomy_term")->condition("vid", "status")->condition("name", $str)->execute();
 
-    switch ($str) {
-      case 'Alive':
-        $str = 1;
-        break;
-      case 'Dead':
-        $str = 2;
-        break;
-      case 'unknown':
-        $str = 3;
-        break;
+    if (empty($termId)) {
+      $term = [
+        'name'     => $str,
+        'vid'      => 'status',
+      ];
+
+      $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->create($term)->save();
+      $termId = \Drupal::entityQuery("taxonomy_term")->condition("vid", "status")->condition("name", $str)->execute();
+      foreach ($termId as $term_key => $term_value) {
+        $str = $term_value;
+      }
+    } else {
+      foreach ($termId as $term_key => $term_value) {
+        $str = $term_value;
+      }
+    }
+
+    return $str;
+  }
+
+  public function GetGenderTaxonomy($str) {
+    $termId = \Drupal::entityQuery("taxonomy_term")->condition("vid", "gender")->condition("name", $str)->execute();
+
+    if (empty($termId)) {
+      $term = [
+        'name'     => $str,
+        'vid'      => 'gender',
+      ];
+
+      $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->create($term)->save();
+      $termId = \Drupal::entityQuery("taxonomy_term")->condition("vid", "status")->condition("name", $str)->execute();
+      foreach ($termId as $term_key => $term_value) {
+        $str = $term_value;
+      }
+    } else {
+      foreach ($termId as $term_key => $term_value) {
+        $str = $term_value;
+      }
     }
 
     return $str;

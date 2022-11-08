@@ -47,6 +47,7 @@ module:
   twig_field_value: 0
   user: 0
   views_bulk_operations: 0
+  views_infinite_scroll: 0
   views_ui: 0
   pathauto: 1
   views: 10
