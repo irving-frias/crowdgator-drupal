@@ -143,8 +143,10 @@ class RickAndMortyCommands extends DrushCommands {
       $page++;
     } while(!isset($response['error']));
 
-    echo $this->convert(memory_get_usage(true));
-    echo "\n";
+    $message = t('Memory usage @memory.', [
+      '@memory' => $this->convert(memory_get_usage(true)),
+    ]);
+    \Drupal::messenger()->addMessage($message);
   }
 
   public function convert($size)
