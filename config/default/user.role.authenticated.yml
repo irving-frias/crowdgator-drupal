@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.rich_text
     - node.type.character
   module:
+    - filter
     - media
     - node
     - system
@@ -23,5 +25,6 @@ permissions:
   - 'edit any character content'
   - 'edit own character content'
   - 'revert character revisions'
+  - 'use text format rich_text'
   - 'view character revisions'
   - 'view media'

@@ -1,0 +1,22 @@
+uuid: 3677908b-9196-487d-95d2-82ef2983ebe4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.gender
+id: taxonomy_term.gender.status
+field_name: status
+entity_type: taxonomy_term
+bundle: gender
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

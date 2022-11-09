@@ -1,0 +1,20 @@
+uuid: 76efc86b-e804-4d80-9c92-1068cda0f203
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.character_image
+id: media.character_image.name
+field_name: name
+entity_type: media
+bundle: character_image
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

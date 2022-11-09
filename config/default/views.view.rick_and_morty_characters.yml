@@ -7,7 +7,6 @@ dependencies:
   module:
     - better_exposed_filters
     - search_api
-    - views_infinite_scroll
 id: rick_and_morty_characters
 label: 'Rick & Morty Characters'
 module: views
@@ -80,7 +79,7 @@ display:
           multi_type: separator
           multi_separator: ', '
       pager:
-        type: infinite_scroll
+        type: mini
         options:
           offset: 0
           items_per_page: 15
@@ -97,10 +96,6 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          views_infinite_scroll:
-            button_text: 'Load More'
-            automatically_load_content: true
-            initially_load_all_pages: false
       exposed_form:
         type: bef
         options:
@@ -236,7 +231,7 @@ display:
     display_options:
       exposed_block: false
       display_extenders: {  }
-      path: rick-morty-characters
+      path: rick-and-morty-characters
     cache_metadata:
       max-age: -1
       contexts:

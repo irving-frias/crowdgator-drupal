@@ -1,0 +1,22 @@
+uuid: c335dd65-8994-4d93-8ff7-e1ab1bb8ef21
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.character_image
+id: media.character_image.status
+field_name: status
+entity_type: media
+bundle: character_image
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

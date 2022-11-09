@@ -1,0 +1,20 @@
+uuid: 8675a042-7f60-4273-959c-6d82977a2c0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.character_image
+  module:
+    - path
+id: media.character_image.path
+field_name: path
+entity_type: media
+bundle: character_image
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

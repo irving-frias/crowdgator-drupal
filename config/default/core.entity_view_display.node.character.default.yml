@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.character.field_url
     - node.type.character
   module:
+    - blazy
     - user
 id: node.character.default
 targetEntityType: node
@@ -45,11 +46,38 @@ content:
     weight: 101
     region: content
   field_image:
-    type: entity_reference_entity_view
+    type: blazy_media
     label: above
     settings:
+      caption: {  }
+      class: ''
+      id: ''
+      image: ''
+      link: ''
+      overlay: ''
+      title: ''
+      vanilla: false
+      layout: ''
       view_mode: default
-      link: false
+      cache: 0
+      skin: ''
+      lazy: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: ''
+      box_style: ''
+      image_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
     third_party_settings: {  }
     weight: 106
     region: content

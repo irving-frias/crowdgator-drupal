@@ -1,0 +1,22 @@
+uuid: e6b24951-06b6-4668-ad89-472c9a195e24
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_characters
+label: 'Content - Characters'
+type: 'canonical_entities:node'
+pattern: 'rick-and-morty-characters/[node:title]'
+selection_criteria:
+  acd137fc-8865-48b2-b388-46e223267331:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: acd137fc-8865-48b2-b388-46e223267331
+    context_mapping:
+      node: node
+    bundles:
+      character: character
+selection_logic: and
+weight: -5
+relationships: {  }
