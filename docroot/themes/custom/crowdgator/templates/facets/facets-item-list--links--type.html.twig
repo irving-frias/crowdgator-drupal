@@ -1,0 +1,86 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a facets item list.
+ *
+ * Available variables:
+ * - items: A list of items. Each item contains:
+ *   - attributes: HTML attributes to be applied to each list item.
+ *   - value: The content of the list element.
+ * - title: The title of the list.
+ * - list_type: The tag for list element ("ul" or "ol").
+ * - wrapper_attributes: HTML attributes to be applied to the list wrapper.
+ * - attributes: HTML attributes to be applied to the list.
+ * - empty: A message to display when there are no items. Allowed value is a
+ *   string or render array.
+ * - context: A list of contextual data associated with the list. May contain:
+ *   - list_style: The ID of the widget plugin this facet uses.
+ * - facet: The facet for this result item.
+ *   - id: the machine name for the facet.
+ *   - label: The facet label.
+ *
+ * @see facets_preprocess_facets_item_list()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if cache_hash %}
+  <!-- facets cacheable metadata
+       hash: {{ cache_hash }}
+  {% if cache_contexts %}
+       contexts: {{ cache_contexts }}
+  {%- endif %}
+  {% if cache_tags %}
+       tags: {{ cache_tags }}
+  {%- endif %}
+  {% if cache_max_age %}
+       max age: {{ cache_max_age }}
+  {%- endif %}
+  -->
+{%- endif %}
+<div class="facets-widget- {{- facet.widget.type -}} ">
+  {% if facet.widget.type %}
+    {%- set attributes = attributes.addClass('item-list__' ~ facet.widget.type) %}
+  {% endif %}
+  {% if items or empty %}
+    {%- if title is not empty -%}
+      <h3>{{ title }}</h3>
+    {%- endif -%}
+
+    <div class="dropdown">
+      <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        {% if items %}
+          {% for item in items %}
+            {% if item.value['#title']['#is_active'] == true %}
+              {% if item.value['#title']['#value'] == 'All' %}
+                {% trans %} All {% endtrans %}
+              {% else %}
+                {{ item.value['#title']['#value'] }}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </button>
+
+      {%- if items -%}
+      <ul class="dropdown-menu facet-active js-facets-links item-list__links js-facets-widget">
+          {%- for item in items -%}
+            {% if item.value['#title']['#is_active'] == true %}
+              <li {{ item.attributes.addClass("dropdown-item active") }}>
+                <span class="facet-item__value">
+                  {{ item.value['#title']['#value'] }}
+                </span>
+              </li>
+            {% else %}
+              <li {{ item.attributes.addClass("dropdown-item") }} >
+                {{ item.value }}
+              </li>
+            {% endif %}
+          {%- endfor -%}
+        </ul>
+      {%- else -%}
+        {{- empty -}}
+      {%- endif -%}
+    </div>
+  {%- endif %}
+</div>

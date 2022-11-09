@@ -91,6 +91,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_type
+  field_type_1:
+    label: Type
+    datasource_id: 'entity:node'
+    property_path: field_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_type
   label:
     label: Label
     property_path: aggregated_field

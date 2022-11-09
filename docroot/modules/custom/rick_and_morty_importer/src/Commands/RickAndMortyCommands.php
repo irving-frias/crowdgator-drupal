@@ -106,6 +106,7 @@ class RickAndMortyCommands extends DrushCommands {
               'field_id' => $value["id"],
               'title' => $value["name"],
               'field_status' => [['target_id' => $this->GetStatusTaxonomy($value["status"])]],
+              'field_type' => $value["type"],
               'field_image' => $image_media,
               'field_gender' => [['target_id' => $this->GetGenderTaxonomy($value["gender"])]],
               'field_created' => $value["created"],
@@ -124,6 +125,7 @@ class RickAndMortyCommands extends DrushCommands {
               $modify_node->field_status = [['target_id' => $this->GetStatusTaxonomy($value["status"])]];
               $modify_node->field_gender = [['target_id' => $this->GetGenderTaxonomy($value["gender"])]];
               $modify_node->field_created = $value["created"];
+              $modify_node->field_type = $value["type"];
 
               $modify_node->save();
               $message = t('Updated Node @id.', [

@@ -26,4 +26,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /rick-morty-characters
+    pages: /rick-and-morty-characters
