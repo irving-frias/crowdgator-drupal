@@ -49,6 +49,8 @@ class RickAndMortyCommands extends DrushCommands {
     $node_storage = $this->entityTypeManager->getStorage('node');
     $media_storage = $this->entityTypeManager->getStorage('media');
     $page = 1;
+    echo $this->convert(memory_get_usage(true));
+    echo "\n";
 
     do {
       $url = 'https://rickandmortyapi.com/api/character?page=' . $page;
@@ -57,10 +59,11 @@ class RickAndMortyCommands extends DrushCommands {
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       $response_json = curl_exec($ch);
       curl_close($ch);
+      echo "\n";
 
       $response = json_decode($response_json, true);
 
-      if ($response["results"] != NULL) {
+      if (!isset($response['error'])) {
         $results = $response["results"];
 
         foreach ($results as $key => $value) {
@@ -138,8 +141,18 @@ class RickAndMortyCommands extends DrushCommands {
       }
 
       $page++;
-    } while($response != NULL);
+    } while(!isset($response['error']));
+
+    echo $this->convert(memory_get_usage(true));
+    echo "\n";
   }
+
+  public function convert($size)
+  {
+    $unit=array('b','kb','mb','gb','tb','pb');
+    return @round($size/pow(1024,($i=floor(log($size,1024)))),2).' '.$unit[$i];
+  }
+
 
   public function GetStatusTaxonomy($str) {
     $termId = \Drupal::entityQuery("taxonomy_term")->condition("vid", "status")->condition("name", $str)->execute();
