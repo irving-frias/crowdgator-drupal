@@ -140,6 +140,8 @@ class RickAndMortyCommands extends DrushCommands {
         }
       }
 
+      $message = t('Imported content from page @page', [ '@page' => $page ]);
+      \Drupal::messenger()->addMessage($message);
       $page++;
     } while(!isset($response['error']));
 

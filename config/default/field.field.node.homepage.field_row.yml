@@ -1,0 +1,31 @@
+uuid: c6d45513-4f63-4b20-b465-0339a0436f4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_row
+    - node.type.homepage
+    - paragraphs.paragraphs_type.row
+  module:
+    - entity_reference_revisions
+id: node.homepage.field_row
+field_name: field_row
+entity_type: node
+bundle: homepage
+label: Row
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      row: row
+    negate: 0
+    target_bundles_drag_drop:
+      row:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

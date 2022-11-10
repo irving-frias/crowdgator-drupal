@@ -1,0 +1,11 @@
+uuid: 7c04b7c4-0766-4de9-90db-348a9911f767
+langcode: en
+status: true
+dependencies: {  }
+name: Homepage
+type: homepage
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

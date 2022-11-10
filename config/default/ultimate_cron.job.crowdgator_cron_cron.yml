@@ -1,0 +1,29 @@
+uuid: 63c22c04-2e27-45f7-81e3-0a92ce7b177b
+langcode: en
+status: true
+dependencies:
+  module:
+    - crowdgator_cron
+title: 'Default cron handler'
+id: crowdgator_cron_cron
+weight: 0
+module: crowdgator_cron
+callback: crowdgator_cron_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0+@ 0 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

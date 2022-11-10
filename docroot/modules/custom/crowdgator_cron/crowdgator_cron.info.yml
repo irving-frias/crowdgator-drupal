@@ -1,0 +1,6 @@
+name: Crowdgator cron
+description: Triggers cron jobs
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10
+

@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * @file
+ * Implements hook function.
+ */
+
+ function crowdgator_cron_cron() {
+  \Drupal::service('rick_and_morty_importer.commands')->importContent();
+ }

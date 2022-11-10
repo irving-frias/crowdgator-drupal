@@ -1,0 +1,26 @@
+uuid: d69f0826-b8b0-44cc-b018-4d2af8151209
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.rich_text
+  module:
+    - ckeditor5
+format: rich_text
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+      - insertTable
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+image_upload: {  }

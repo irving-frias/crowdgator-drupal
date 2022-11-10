@@ -1,0 +1,32 @@
+uuid: db33a58e-5342-4c4e-991b-431268c33ad7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.homepage.field_row
+    - node.type.homepage
+  module:
+    - entity_reference_revisions
+    - user
+id: node.homepage.default
+targetEntityType: node
+bundle: homepage
+mode: default
+content:
+  field_row:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

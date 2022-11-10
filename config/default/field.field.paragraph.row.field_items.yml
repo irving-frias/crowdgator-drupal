@@ -1,0 +1,29 @@
+uuid: a939f574-7115-4b80-b69a-5f0d47c308db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.row
+  module:
+    - entity_reference_revisions
+id: paragraph.row.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: row
+label: Items
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      row:
+        weight: 2
+        enabled: false
+field_type: entity_reference_revisions

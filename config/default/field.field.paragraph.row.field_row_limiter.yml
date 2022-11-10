@@ -1,0 +1,21 @@
+uuid: fe88d6c7-b1e6-4688-8190-5c3d4e2faefc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_row_limiter
+    - paragraphs.paragraphs_type.row
+  module:
+    - options
+id: paragraph.row.field_row_limiter
+field_name: field_row_limiter
+entity_type: paragraph
+bundle: row
+label: 'Row Limiter'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
