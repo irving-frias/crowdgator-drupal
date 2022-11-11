@@ -1,0 +1,14 @@
+uuid: 1e234ef4-1724-4657-a681-20bd1a5fe427
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.site_architect
+  module:
+    - user
+id: user_remove_role_action.site_architect
+label: 'Remove the Site Architect role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: site_architect

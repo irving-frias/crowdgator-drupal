@@ -1,0 +1,9 @@
+uuid: e05bc0c0-3474-40f7-92a4-3a68d032dbbf
+langcode: en
+status: true
+dependencies: {  }
+id: site_architect
+label: 'Site Architect'
+weight: 2
+is_admin: true
+permissions: {  }
