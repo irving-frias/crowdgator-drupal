@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Crowdgator theme file.
+ * Contains crowdgatorm.module.
  */
 
 include_once 'inc/theme_settings.inc';
