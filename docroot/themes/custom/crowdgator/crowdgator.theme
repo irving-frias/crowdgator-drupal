@@ -5,4 +5,5 @@
  * Crowdgator theme file.
  */
 
+include_once 'inc/preprocess_html.inc';
 include_once 'inc/theme_settings.inc';

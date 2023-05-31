@@ -3,6 +3,8 @@ global-styling:
   css:
     component:
       css/style.css: {}
+  js:
+    js/global.js: {w}
 bootstrap:
   js:
     /libraries/popper.js/dist/umd/popper.min.js: { weight: -19 }
